@@ -116,14 +116,15 @@ void _mul(stack_t **head, unsigned int cmdline_n)
 	stack_t *elem_to_mul = *head;
 	int i;
 
-	for (i = 0; elem_to_mul != NULL; elem_to_mul = elem_to_mul->next, i++)
+	i = 0;
+	for (; elem_to_mul != NULL; elem_to_mul = elem_to_mul->next, i++)
+		;
+
+	if (i < 2)
 	{
-		if (i < 2)
-		{
-			dprintf(2, "L%u: can't mul, stack too short\n", cmdline_n);
-			free_glbvar();
-			exit(EXIT_FAILURE);
-		}
+		dprintf(2, "L%u: can't mul, stack too short\n", cmdline_n);
+		free_glbvar();
+		exit(EXIT_FAILURE);
 	}
 
 	elem_to_mul = (*head)->next;
