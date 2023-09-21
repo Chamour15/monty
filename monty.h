@@ -82,6 +82,7 @@ void _swap(stack_t **head, unsigned int cmdline_n);
 
 /* opcodes_functions2.c */
 void _add(stack_t **head, unsigned int cmdline_n);
+void _nop(stack_t **head, unsigned int cmdline_n);
 
 #endif
 
