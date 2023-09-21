@@ -62,3 +62,25 @@ void _pchar(stack_t **head, unsigned int cmdline_n)
 	printf("%c\n", (*head)->n);
 }
 
+/**
+ * _pstr - opcod prints the string of the stack.
+ * @head: head of the doubly linked list.
+ * @cmdline_n: line number.
+ *
+ * Return: void, no return.
+ */
+void _pstr(stack_t **head, unsigned int cmdline_n)
+{
+	stack_t *int_to_char = *head;
+
+	UNUSED(cmdline_n);
+
+	while (int_to_char && int_to_char->n > 0 && int_to_char->n < BUFFER)
+	{
+		printf("%c", int_to_char->n);
+		int_to_char = int_to_char->next;
+	}
+
+	printf("\n");
+}
+
