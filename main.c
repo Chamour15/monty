@@ -16,9 +16,8 @@ int main(int argc, char *argv[])
 	char *cmdlines[2] = {NULL, NULL};
 	size_t buff_size = BUFF_SIZE;
 	ssize_t  cmdl = 0;
-	FILE *file;
+	FILE *file = input(argc, argv);
 
-	file = input(argc, argv);
 	global_var(file);
 	cmdl = getline(&glob.buff, &buff_size, file);
 
@@ -41,6 +40,7 @@ int main(int argc, char *argv[])
 		cmdl = getline(&glob.buff, &buff_size, file);
 		glob.cnt++;
 	}
+
 	free_glbvar();
 
 	return (0);

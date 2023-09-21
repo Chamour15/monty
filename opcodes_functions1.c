@@ -96,17 +96,18 @@ void _pint(stack_t **head, unsigned int cmdline_n)
  */
 void _pop(stack_t **head, unsigned int cmdline_n)
 {
-        stack_t *elem_to_remove;
+	stack_t *elem_to_remove;
 
-        if (head == NULL || *head == NULL)
-        {
-                dprintf(2, "L%u: can't pop an empty stack\n", cmdline_n);
-                free_glbvar();
-                exit(EXIT_FAILURE);
-        }
-        elem_to_remove = *head;
-        *head = (*head)->next;
-        free(elem_to_remove);
+	if (head == NULL || *head == NULL)
+	{
+		dprintf(2, "L%u: can't pop an empty stack\n", cmdline_n);
+		free_glbvar();
+		exit(EXIT_FAILURE);
+	}
+
+	elem_to_remove = *head;
+	*head = (*head)->next;
+	free(elem_to_remove);
 }
 
 /**
