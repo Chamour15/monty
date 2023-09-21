@@ -103,3 +103,31 @@ void _div(stack_t **head, unsigned int cmdline_n)
 	_pop(head, cmdline_n);
 }
 
+/**
+ * _mul - opcode multiplies the top element to the second top element of
+ * the stack.
+ * @head: head of the doubly linked list.
+ * @cmdline_n: line number.
+ *
+ * Return: void, no return.
+ */
+void _mul(stack_t **head, unsigned int cmdline_n)
+{
+	stack_t *elem_to_mul = *head;
+	int i;
+
+	for (i = 0; elem_to_mul != NULL; elem_to_mul = elem_to_mul->next, i++)
+	{
+		if (i < 2)
+		{
+			dprintf(2, "L%u: can't mul, stack too short\n", cmdline_n);
+			free_glbvar();
+			exit(EXIT_FAILURE);
+		}
+	}
+
+	elem_to_mul = (*head)->next;
+	elem_to_mul->n = elem_to_mul->n * (*head)->n;
+	_pop(head, cmdline_n);
+}
+
