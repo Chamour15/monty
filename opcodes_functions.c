@@ -87,3 +87,25 @@ void _pint(stack_t **head, unsigned int cmdline_n)
 	printf("%d\n", (*head)->n);
 }
 
+/**
+ * _pop - opcode that removes the top element of the stack.
+ * @head: head of the linked list.
+ * @cmdline_n: line number.
+ *
+ * Return: void, no return.
+ */
+void _pop(stack_t **head, unsigned int cmdline_n)
+{
+        stack_t *elem_to_remove;
+
+        if (head == NULL || *head == NULL)
+        {
+                dprintf(2, "L%u: can't pop an empty stack\n", cmdline_n);
+                free_glbvar();
+                exit(EXIT_FAILURE);
+        }
+        elem_to_remove = *head;
+        *head = (*head)->next;
+        free(elem_to_remove);
+}
+
