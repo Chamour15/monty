@@ -80,5 +80,8 @@ void _pint(stack_t **head, unsigned int cmdline_n);
 void _pop(stack_t **head, unsigned int cmdline_n);
 void _swap(stack_t **head, unsigned int cmdline_n);
 
+/* opcodes_functions2.c */
+void _add(stack_t **head, unsigned int cmdline_n);
+
 #endif
 
