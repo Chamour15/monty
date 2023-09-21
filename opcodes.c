@@ -13,7 +13,7 @@ void (*opcodes(char *opc))(stack_t **stack, unsigned int line_number)
 		{"pall", _pall},
 		{NULL, NULL}
 	};
-	
+
 	int i;
 
 	for (i = 0; opcodes[i].opcode; i++)
