@@ -79,17 +79,16 @@ void _sub(stack_t **head, unsigned int cmdline_n)
 void _div(stack_t **head, unsigned int cmdline_n)
 {
 	stack_t *elem_to_div = *head;
-	int i;
+	int i = 0;
 
-	for (i = 0; elem_to_div != NULL; elem_to_div = elem_to_div->next, i++)
+	for (; elem_to_div != NULL; elem_to_div = elem_to_div->next, i++)
+		;
+
+	if (i < 2)
 	{
-
-		if (i < 2)
-		{
-			dprintf(2, "L%u: can't div, stack too short\n", cmdline_n);
-			free_glbvar();
-			exit(EXIT_FAILURE);
-		}
+		dprintf(2, "L%u: can't div, stack too short\n", cmdline_n);
+		free_glbvar();
+		exit(EXIT_FAILURE);
 	}
 
 	if ((*head)->n == 0)
