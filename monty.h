@@ -14,5 +14,11 @@
 #include <fcntl.h>
 #include <ctype.h>
 
+/* string_functions.c */
+int _strcmp(const char *str1, const char *str2);
+char *_strtok(char *str, char *delims);
+int c_str(const char *str, char c);
+FILE *input(int argumentsn, char *arguments[]);
+
 #endif
 
