@@ -78,6 +78,7 @@ void _push(stack_t **head, unsigned int cmdline_n);
 void _pall(stack_t **head, unsigned int cmdline_n);
 void _pint(stack_t **head, unsigned int cmdline_n);
 void _pop(stack_t **head, unsigned int cmdline_n);
+void _swap(stack_t **head, unsigned int cmdline_n);
 
 #endif
 

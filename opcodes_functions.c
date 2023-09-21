@@ -109,3 +109,33 @@ void _pop(stack_t **head, unsigned int cmdline_n)
         free(elem_to_remove);
 }
 
+/**
+ * _swap - opcode that swaps the top two elements of the stack.
+ * @head: head of the linked list.
+ * @cmdline_n: line number.
+ *
+ * Return: void, no return
+ */
+void _swap(stack_t **head, unsigned int cmdline_n)
+{
+	stack_t *elem_to_swap = *head;
+	int i;
+
+	i = 0;
+	for (; elem_to_swap != NULL; elem_to_swap = elem_to_swap->next, i++)
+	;
+
+	if (i < 2)
+	{
+		dprintf(2, "L%u: can't swap, stack too short\n", cmdline_n);
+		free_glbvar();
+		exit(EXIT_FAILURE);
+	}
+
+	elem_to_swap = *head;
+	*head = (*head)->next;
+	elem_to_swap->next = (*head)->next;
+	elem_to_swap->prev = *head;
+	(*head)->next = elem_to_swap;
+	(*head)->prev = NULL;
+}
