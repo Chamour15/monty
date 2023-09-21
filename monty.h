@@ -76,6 +76,7 @@ void free_dlistint(stack_t *head);
 /* opcodes_functions1.c */
 void _push(stack_t **head, unsigned int cmdline_n);
 void _pall(stack_t **head, unsigned int cmdline_n);
+void _pint(stack_t **head, unsigned int cmdline_n);
 
 #endif
 

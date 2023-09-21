@@ -65,3 +65,25 @@ void _pall(stack_t **head, unsigned int cmdline_n)
 	}
 }
 
+/**
+ * _pint - opcode that prints the value at the top of the stack.
+ * @head: head of the linked list.
+ * @cmdline_n: line number.
+ *
+ * Return: void, no return.
+ */
+void _pint(stack_t **head, unsigned int cmdline_n)
+{
+	UNUSED(cmdline_n);
+
+	if (*head == NULL)
+	{
+		dprintf(2, "L%u: ", cmdline_n);
+		dprintf(2, "can't pint, stack empty\n");
+		free_glbvar();
+		exit(EXIT_FAILURE);
+	}
+
+	printf("%d\n", (*head)->n);
+}
+
