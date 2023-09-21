@@ -20,5 +20,9 @@ char *_strtok(char *str, char *delims);
 int c_str(const char *str, char c);
 FILE *input(int argumentsn, char *arguments[]);
 
+/* opcodes_functions1.c */
+void _push(stack_t **head, unsigned int cmdline_n);
+void _pall(stack_t **head, unsigned int cmdline_n);
+
 #endif
 
