@@ -36,3 +36,29 @@ void _mod(stack_t **head, unsigned int cmdline_n)
 	_pop(head, cmdline_n);
 }
 
+/**
+ * _pchar - opcode print the char value of the first element.
+ * @head: head of the linked list
+ * @cmdline_n: line number.
+ *
+ * Return: void, no return.
+ */
+void _pchar(stack_t **head, unsigned int cmdline_n)
+{
+	if (head == NULL || *head == NULL)
+	{
+		dprintf(2, "L%u: can't pchar, stack empty\n", cmdline_n);
+		free_glbvar();
+		exit(EXIT_FAILURE);
+	}
+
+	if ((*head)->n < 0 || (*head)->n >= 128)
+	{
+		dprintf(2, "L%u: can't pchar, value out of range\n", cmdline_n);
+		free_glbvar();
+		exit(EXIT_FAILURE);
+	}
+
+	printf("%c\n", (*head)->n);
+}
+

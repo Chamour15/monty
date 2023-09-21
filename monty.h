@@ -89,6 +89,7 @@ void _mul(stack_t **head, unsigned int cmdline_n);
 
 /* opcodes_functions3.c */
 void _mod(stack_t **head, unsigned int cmdline_n);
+void _pchar(stack_t **head, unsigned int cmdline_n);
 
 #endif
 
