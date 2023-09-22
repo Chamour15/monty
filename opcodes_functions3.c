@@ -88,14 +88,14 @@ void _pstr(stack_t **head, unsigned int cmdline_n)
  * _rotl - opcode rotates the first element to the bottom and
  * the second to the top.
  * @head: head of the doubly linked list.
- * @cmdline: line number.
+ * @cmdline_n: line number.
  *
- * Return: void no return
+ * Return: void, no return.
  */
 void _rotl(stack_t **head, unsigned int cmdline_n)
 {
 	stack_t *tmp = NULL, *elem_rot = NULL;
-	
+
 	UNUSED(cmdline_n);
 
 	if (*head == NULL)
