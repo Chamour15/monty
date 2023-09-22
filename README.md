@@ -45,7 +45,7 @@
 `monty` executes the following opcodes:
 
 |  Opcode  |  Description                                   |
-| -------- | -------------      |
+| -------- | -------------------------------------------------------------------------------------------------------- |
 | `push`   | Pushes an element to the stack |
 | `pall`   | Prints all the values on the stack |
 | `pint`   | Prints the value at the top of the stack |
@@ -64,7 +64,7 @@
 | `rotl`   | Rotates the stack to the top |
 | `rotr`   | Rotates the stack to the bottom |
 
-## Authors
-* Wafae Chamour
-* Mohammed Dakhamat
+## Authors / Contributors
+* Wafae Chamour - [GitHub](https://github.com/Chamour15)
+* Mohammed Dakhamat - [GitHub](https://github.com/dakhamohammed)
 
