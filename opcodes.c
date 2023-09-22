@@ -22,6 +22,7 @@ void (*opcodes(char *opc))(stack_t **stack, unsigned int line_number)
 		{"mod", _mod},
 		{"pchar", _pchar},
 		{"pstr", _pstr},
+		{"rotl", _rotl},
 		{NULL, NULL}
 	};
 

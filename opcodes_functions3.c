@@ -84,3 +84,40 @@ void _pstr(stack_t **head, unsigned int cmdline_n)
 	printf("\n");
 }
 
+/**
+ * _rotl - opcode rotates the first element to the bottom and
+ * the second to the top.
+ * @head: head of the doubly linked list.
+ * @cmdline: line number.
+ *
+ * Return: void no return
+ */
+void _rotl(stack_t **head, unsigned int cmdline_n)
+{
+	stack_t *tmp = NULL, *elem_rot = NULL;
+	
+	UNUSED(cmdline_n);
+
+	if (*head == NULL)
+	{
+		return;
+	}
+
+	if ((*head)->next == NULL)
+	{
+		return;
+	}
+
+	tmp = (*head)->next;
+	elem_rot = *head;
+
+	for (; elem_rot->next != NULL; elem_rot = elem_rot->next)
+		;
+
+	tmp->prev = NULL;
+	elem_rot->next = *head;
+	(*head)->next = NULL;
+	(*head)->prev = elem_rot;
+	*head = tmp;
+}
+
